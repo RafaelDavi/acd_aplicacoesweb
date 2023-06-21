@@ -1,0 +1,15 @@
+.Menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 13%;
+    background-color: var(--second-bg-color);
+    height: 100%;
+}
+li{
+    list-style: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.sub{margin-left: 20px;}

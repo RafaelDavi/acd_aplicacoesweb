@@ -1,0 +1,52 @@
+.Card {
+    width: 83%;
+    padding: 14px;
+    margin-left: 14%;
+}
+
+.CardEmpresa, .CardFornecedor {
+    margin-top: 15px;
+    width: calc(100% - 35px);
+    padding: 0 0 10px 15px;
+    float: left;
+    text-align: left;
+    background-color: var(--main-bg-color);
+    border-radius: 12px;
+    box-shadow: 1px 3px 4px var(--dark-bg-color);
+}
+.CardEmpresa:last-child, .CardFornecedor:last-child{
+    margin-bottom: 50px;
+}
+
+.CardEmpresa .menu, .CardFornecedor .menu{
+    float: right;
+    width: 15%;
+}
+
+.CardEmpresa .menu button, .CardFornecedor .menu button{
+    float: right;
+    top: 0;
+    border: none;
+    padding: 4px 7px;
+    border-radius: 5px;
+    margin: 15px;
+
+}
+
+.CardEmpresa span, .CardFornecedor span {
+    padding: 2px 5px;
+    border-radius: 5px;
+    background-color: var(--main-btn-color);
+    color: var(--main-bg-color);
+}
+
+
+.vermelho {
+    background-color: var(--main-btn-erro-color);
+    color: var(--second-bg-color);
+}
+
+.amarelo {
+    background-color: var(--main-btn-alert-color);
+    color: var(--second-btn-color);
+}

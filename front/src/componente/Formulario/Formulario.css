@@ -1,0 +1,39 @@
+.Formulario{
+    width: calc(90% - 20px);
+    padding: 10px 15px;
+}
+
+.Formulario input{
+    width: calc(80% - 10px);
+    height: 25px;
+    margin: 5px;
+    margin-left: 20px;
+    float: left;
+    padding-left: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--second-btn-color);
+}
+.Formulario select{
+    width: calc(30% - 10px);
+    height: 25px;
+    margin: 5px;
+    margin-left: 20px;
+    float: left;
+    padding-left: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--second-btn-color);
+}
+
+.Formulario .submit{
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--main-btn-color);
+    border: 1px solid var(--second-btn-color);
+}
+
+
+label{float: left;width: 100%;margin: 5px;margin-left: 20px;}
