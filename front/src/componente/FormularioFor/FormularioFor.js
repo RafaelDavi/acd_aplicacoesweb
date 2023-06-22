@@ -1,12 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useRef } from "react";
 import { toast } from "react-toastify";
+import "./FormularioFor.css";
 
-const Formulario = ({ getFornecedor, onEdit, setOnEdit }) => {
+const FormularioFor = ({ getFornecedor, onEdit, setOnEdit }) => {
   const ref = useRef();
 
   useEffect(() => {
     if (onEdit) {
+      console.log("onEdit:", onEdit);
       const fornecedor = ref.current;
 
       fornecedor.nome.value = onEdit.nome;
@@ -14,44 +16,44 @@ const Formulario = ({ getFornecedor, onEdit, setOnEdit }) => {
       fornecedor.telefone.value = onEdit.telefone;
       fornecedor.rg.value = onEdit.rg;
       fornecedor.dataNascimento.value = onEdit.dataNascimento;
-
-
     }
   }, [onEdit]);
 
-
   const handleSubmitFor = async (e) => {
     e.preventDefault();
-
-
 
     const fornecedor = ref.current;
 
     const dataNascimento = new Date(fornecedor.dataNascimento.value);
     const idadeMinima = new Date();
     idadeMinima.setFullYear(idadeMinima.getFullYear() - 18);
-  
-    if (dataNascimento > idadeMinima) {
+
+    if (fornecedor.cp.value.length < 12 && dataNascimento > idadeMinima) {
       return toast.warn("É necessário ter mais de 18 anos para cadastrar.");
     }
 
-    if (fornecedor.cp.value.length < 12){
     if (
       !fornecedor.nome.value ||
       !fornecedor.cp.value ||
-      !fornecedor.rg.value ||
-      !fornecedor.dataNascimento.value ||
-      !fornecedor.telefone.value
+      !fornecedor.telefone.value ||
+      (fornecedor.cp.value && fornecedor.cp.value.length === 11)
     ) {
-      return toast.warn("Preencha todos os campos!");
-    }} else {
+      if(!fornecedor.rg.value || !fornecedor.dataNascimento.value){
+        return toast.warn("Preencha todos os campos  para o CPF corretamente!");
+      }
+      
+    }
+
+    
     if (
       !fornecedor.nome.value ||
       !fornecedor.cp.value ||
-      !fornecedor.telefone.value
+      !fornecedor.telefone.value ||
+      fornecedor.cp.value.length < 14 ||
+      fornecedor.cp.value.length > 14 
     ) {
-      return toast.warn("Preencha todos os campos!");
-    }}
+      return toast.warn("Preencha todos os campos para o CNPJ corretamente!");
+    }
     
 
     if (onEdit) {
@@ -61,7 +63,7 @@ const Formulario = ({ getFornecedor, onEdit, setOnEdit }) => {
           cp: fornecedor.cp.value,
           telefone: fornecedor.telefone.value,
           rg: fornecedor.rg.value,
-          dataNascimento: fornecedor.dataNascimento.value
+          dataNascimento: fornecedor.dataNascimento.value,
         })
         .then(({ data }) => toast.success(data))
         .catch(({ data }) => toast.error(data));
@@ -87,8 +89,9 @@ const Formulario = ({ getFornecedor, onEdit, setOnEdit }) => {
     setOnEdit(null);
     getFornecedor();
   };
+
   return (
-    <form className="Formulario" ref={ref} onSubmit={handleSubmitFor}>
+    <form className="FormularioFor" ref={ref} onSubmit={handleSubmitFor}>
       <label>nome</label>
       <input name="nome" />
       <label>CPF/CNPJ</label>
@@ -102,6 +105,6 @@ const Formulario = ({ getFornecedor, onEdit, setOnEdit }) => {
       <button type="submit" className="submit">cadastrar</button>
     </form>
   );
-}
+};
 
-export default Formulario;
+export default FormularioFor;

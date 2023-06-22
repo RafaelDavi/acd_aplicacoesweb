@@ -53,4 +53,19 @@ export const addRelacao = (req, res) => {
   };
   
 
+  export const relacaoEmpresaFornecedor = (req, res) => {
+    const q = "SELECT f.* FROM empresa_fornecedor ef JOIN fornecedor f ON f.cp = ef.cp WHERE ef.cnpj = ?";
+  
+    const values = [
+      req.params.id
+    ];
+  
+    db.query(q, values, (err, data) => {
+      if (err) {
+        return res.json(err);
+      }
+  
+      return res.status(200).json(data);
+    });
+  };
 

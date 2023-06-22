@@ -1,7 +1,6 @@
 import React from "react";
 import "./Menu.css";
-import axios from "axios";
-import { toast } from "react-toastify";
+
 
 
 const Menu = () => {

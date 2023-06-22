@@ -6,10 +6,15 @@
     background-color: var(--second-bg-color);
     height: 100%;
 }
+
 li{
+    margin-left: -30px;
     list-style: none;
     margin-bottom: 10px;
     cursor: pointer;
+    padding: 4px 7px;
+    border-radius: 5px;
+    background-color: var(--main-btn-color);
 }
 
-.sub{margin-left: 20px;}
+.sub{margin-left: -10px;background-color: var(--main-btn-color-hover);color: white;}

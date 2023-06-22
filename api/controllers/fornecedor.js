@@ -41,7 +41,7 @@ export const addFornecedor = (req, res) => {
       req.body.dataNascimento
     ];
   
-    db.query(q, [...values, req.params.id], (err) => {
+    db.query(q, [values], (err) => {
       if (err) return res.json(err);
   
       return res.status(200).json("Fornecedor atualizada com sucesso.");

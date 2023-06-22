@@ -1,9 +1,9 @@
-.Formulario{
+.FormularioFor{
     width: calc(90% - 20px);
     padding: 10px 15px;
 }
 
-.Formulario input{
+.FormularioFor input{
     width: calc(80% - 10px);
     height: 25px;
     margin: 5px;
@@ -13,8 +13,8 @@
     border-radius: 6px;
     border: 1px solid var(--second-btn-color);
 }
-.Formulario select{
-    width: calc(50% - 10px);
+.FormularioFor select{
+    width: calc(30% - 10px);
     height: 25px;
     margin: 5px;
     margin-left: 20px;
@@ -24,9 +24,8 @@
     border: 1px solid var(--second-btn-color);
 }
 
-.Formulario .submit{
+.FormularioFor .submit{
     margin-left: 20px;
-    margin-right: 50%;
     margin-top: 20px;
     padding: 5px 10px;
     font-size: 16px;

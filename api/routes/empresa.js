@@ -1,7 +1,7 @@
 import express from "express";
 import { getEmpresa, addEmpresa, updateEmpresa, deleteEmpresa} from "../controllers/empresa.js";
 import { addFornecedor, deleteFornecedor, getFornecedor, updateFornecedor } from "../controllers/fornecedor.js";
-import { addRelacao, deleteRelacao, getRelacao, getRelacaoID } from "../controllers/relacao.js";
+import { addRelacao, deleteRelacao, getRelacao, getRelacaoID, relacaoEmpresaFornecedor } from "../controllers/relacao.js";
 
 const router = express.Router()
 
@@ -19,6 +19,7 @@ router.get("/relacao", getRelacao)
 router.get("/relacao/:id", getRelacaoID)
 router.post("/relacao", addRelacao)
 router.delete("/relacao/:id", deleteRelacao)
+router.get("/relacaoEmpresa/:id", relacaoEmpresaFornecedor)
 
 
 export default router
