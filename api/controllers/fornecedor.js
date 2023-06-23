@@ -11,8 +11,9 @@ export const getFornecedor = (_, res) => {
 };
 
 
+
 export const addFornecedor = (req, res) => {
-    const q = "INSERT INTO fornecedor (cp, nome, telefone, rg, dataNascimento) VALUES (?);";
+    const q = "INSERT INTO fornecedor (cp, nome, telefone, rg, dataNascimento) VALUES (?,?,?,?,?);";
   
     const values = [
       req.body.cp,
@@ -22,7 +23,7 @@ export const addFornecedor = (req, res) => {
       req.body.dataNascimento
     ];
   
-    db.query(q, [values], (err) =>{
+    db.query(q, values, (err) =>{
       if(err) return res.json(err);
   
       return res.status(200).json("Fornecedor criado com sucesso");
