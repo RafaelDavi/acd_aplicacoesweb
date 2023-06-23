@@ -8,7 +8,6 @@ import Card from          "./componente/Card/Card";
 import Menu from          "./componente/Menu/Menu";
 import Formulario from    "./componente/Formulario/Formulario";
 import FormularioFor from "./componente/FormularioFor/FormularioFor";
-import Pesquisa from "./componente/Pesquisa/Pesquisa";
 
 
 function App() {

@@ -35,5 +35,7 @@
     border: 1px solid var(--second-btn-color);
 }
 
-
+.FormularioFor b{
+    font-size: 12px;
+}
 label{float: left;width: 100%;margin: 5px;margin-left: 20px;}

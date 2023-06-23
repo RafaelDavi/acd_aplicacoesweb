@@ -87,14 +87,11 @@ const Card = ({ dadosObj, dadosObjEstrangeiro, dadosRelacao, setOnEditRel, set, 
                 dadosObj.map((itemFor, i) => (
                     <div className="CardFornecedor" id={i} key={i}>
                         <div className="menu">
-                            <button className="vermelho" onClick={() => handleDeleteFor(itemFor.cnpj)}>
+                            <button className="vermelho" onClick={() => handleDeleteFor(itemFor.cp)}>
                                 excluir
                             </button>
                             <button className="amarelo" onClick={() => { handleScroll('cadastrosFor'); handleEdit(itemFor) }}>
                                 editar
-                            </button>
-                            <button className="amarelo" onClick={() => { handleScroll('cadastrosRel') }}>
-                                adicionar fornecedor
                             </button>
                         </div>
                         <h1>{itemFor.nome}</h1>

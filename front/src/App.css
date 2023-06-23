@@ -44,8 +44,9 @@ body {
   box-shadow: 1px 3px 4px var(--dark-bg-color);
 }
 
-h1{
+.cadastros h1{
   margin-left: 20px;
+  text-transform: uppercase;
 }
 
 .cadastrosEmp h2, .cadastrosFor h2, .cadastrosRel h2{
