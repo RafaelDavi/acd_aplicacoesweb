@@ -67,7 +67,7 @@ cd nome-da-pasta-do-projeto
 4. Instale as dependências do backend:
 
 ```
-cd backend
+cd api
 npm install
 ```
 
@@ -78,13 +78,13 @@ npm install
 7. Inicie o servidor backend:
 
 ```
-npm start
+node index.js
 ```
 
 8. Em outra janela do terminal, instale as dependências do frontend:
 
 ```
-cd frontend
+cd front
 npm install
 ```
 
